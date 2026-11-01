@@ -14,6 +14,7 @@ export function createInitialState() {
     lastAssessment: null,
     interviewNotes: {},
     dailyGoal: 3,
+    theme: 'light',
   };
 }
 
@@ -45,6 +46,7 @@ export function readState(storage = globalThis.localStorage) {
       questionNotes: isRecord(parsed.questionNotes) ? parsed.questionNotes : {},
       interviewNotes: isRecord(parsed.interviewNotes) ? parsed.interviewNotes : {},
       dailyGoal: Number.isInteger(parsed.dailyGoal) && parsed.dailyGoal > 0 ? parsed.dailyGoal : fallback.dailyGoal,
+      theme: parsed.theme === 'dark' ? 'dark' : 'light',
     };
   } catch {
     return fallback;

@@ -25,11 +25,12 @@ test('initial state has safe, predictable collections', () => {
 
 test('state persistence round-trips and malformed storage falls back safely', () => {
   const storage = memoryStorage();
-  const state = { ...createInitialState(), completedTopics: ['os-process-thread'], dailyGoal: 4 };
+  const state = { ...createInitialState(), completedTopics: ['os-process-thread'], dailyGoal: 4, theme: 'dark' };
   assert.equal(writeState(state, storage), true);
   assert.deepEqual(readState(storage), state);
   const broken = memoryStorage({ 'roundzero:v1': '{bad json' });
   assert.deepEqual(readState(broken), createInitialState());
+  assert.equal(readState(memoryStorage({ 'roundzero:v1': JSON.stringify({ theme: 'unexpected' }) })).theme, 'light');
 });
 
 test('state reader repairs malformed collection fields', () => {

@@ -640,3 +640,169 @@ h1, h2, h3, p { margin-top: 0; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 .mobile-scrim { padding: 0; border: 0; }
+
+.theme-toggle { width: 35px; height: 35px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink-soft); cursor: pointer; transition: .18s ease; }
+.theme-toggle:hover { border-color: var(--forest-2); color: var(--forest); }
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #111a15;
+  --paper-deep: #18251d;
+  --surface: #1b2921;
+  --surface-2: #223229;
+  --ink: #e8eee5;
+  --ink-soft: #c1cdc1;
+  --muted: #9eada0;
+  --muted-light: #849587;
+  --line: #34463a;
+  --line-strong: #46594b;
+  --forest: #a9bf83;
+  --forest-2: #718e5c;
+  --lime: #e9f08a;
+  --lime-dark: #cdd65b;
+  --shadow: 0 18px 50px rgba(0, 0, 0, .24);
+}
+
+:root[data-theme="dark"] body { background: var(--paper); color: var(--ink); }
+:root[data-theme="dark"] .topbar { background: rgba(17, 26, 21, .9); }
+:root[data-theme="dark"] .theme-toggle { border-color: var(--line); background: var(--surface); color: var(--lime); }
+:root[data-theme="dark"] .theme-toggle:hover { border-color: var(--lime-dark); color: var(--lime); }
+:root[data-theme="dark"] .global-search,
+:root[data-theme="dark"] .stat-card,
+:root[data-theme="dark"] .track-card,
+:root[data-theme="dark"] .panel,
+:root[data-theme="dark"] .search-field,
+:root[data-theme="dark"] .track-progress-box,
+:root[data-theme="dark"] .icon-button,
+:root[data-theme="dark"] .interview-callout,
+:root[data-theme="dark"] .aside-card,
+:root[data-theme="dark"] .question-toolbar select,
+:root[data-theme="dark"] .company-actions select,
+:root[data-theme="dark"] .coding-progress,
+:root[data-theme="dark"] .coding-card,
+:root[data-theme="dark"] .question-card,
+:root[data-theme="dark"] .last-result,
+:root[data-theme="dark"] .timer-pill,
+:root[data-theme="dark"] .assessment-option,
+:root[data-theme="dark"] .interview-side,
+:root[data-theme="dark"] .interview-card,
+:root[data-theme="dark"] .add-company-form,
+:root[data-theme="dark"] .application-card,
+:root[data-theme="dark"] .planner-overview,
+:root[data-theme="dark"] .resource-card,
+:root[data-theme="dark"] .planner-ring > div { background: var(--surface); }
+:root[data-theme="dark"] .track-detail-hero,
+:root[data-theme="dark"] .example-block,
+:root[data-theme="dark"] .coding-note,
+:root[data-theme="dark"] .answer-panel,
+:root[data-theme="dark"] .planner-tip,
+:root[data-theme="dark"] .resource-note { background: var(--surface-2); }
+:root[data-theme="dark"] .track-code,
+:root[data-theme="dark"] .panel-count,
+:root[data-theme="dark"] .process-dot,
+:root[data-theme="dark"] .callout-mark,
+:root[data-theme="dark"] .aside-tip,
+:root[data-theme="dark"] .coding-toggle.selected,
+:root[data-theme="dark"] .question-subject,
+:root[data-theme="dark"] .assessment-option.chosen,
+:root[data-theme="dark"] .application-step,
+:root[data-theme="dark"] .resource-tags i { background: #304337; }
+:root[data-theme="dark"] .track-code,
+:root[data-theme="dark"] .panel-count,
+:root[data-theme="dark"] .process-dot,
+:root[data-theme="dark"] .callout-mark,
+:root[data-theme="dark"] .aside-tip,
+:root[data-theme="dark"] .question-subject,
+:root[data-theme="dark"] .resource-tags i { color: #dce8c8; }
+:root[data-theme="dark"] .tone-coral .track-code,
+:root[data-theme="dark"] .tone-blue .track-code,
+:root[data-theme="dark"] .tone-gold .track-code,
+:root[data-theme="dark"] .tone-violet .track-code,
+:root[data-theme="dark"] .tone-teal .track-code,
+:root[data-theme="dark"] .tone-pink .track-code,
+:root[data-theme="dark"] .pitfall-list li span { background: #3a302a; color: #edc5b4; }
+:root[data-theme="dark"] .today-item.is-done .custom-check,
+:root[data-theme="dark"] .planner-task.is-done .planner-check,
+:root[data-theme="dark"] .icon-button.selected,
+:root[data-theme="dark"] .save-question.selected,
+:root[data-theme="dark"] .assessment-option.chosen .option-letter,
+:root[data-theme="dark"] .plus-square,
+:root[data-theme="dark"] .company-avatar { background: #3d4c34; color: #e4edc5; }
+:root[data-theme="dark"] .topbar,
+:root[data-theme="dark"] .page-footer,
+:root[data-theme="dark"] .global-search,
+:root[data-theme="dark"] .search-field,
+:root[data-theme="dark"] .track-card,
+:root[data-theme="dark"] .panel,
+:root[data-theme="dark"] .stat-card,
+:root[data-theme="dark"] .lesson-row,
+:root[data-theme="dark"] .track-detail-hero,
+:root[data-theme="dark"] .track-progress-box,
+:root[data-theme="dark"] .button-quiet,
+:root[data-theme="dark"] .icon-button,
+:root[data-theme="dark"] .example-block,
+:root[data-theme="dark"] .interview-callout,
+:root[data-theme="dark"] .aside-card,
+:root[data-theme="dark"] .coding-progress,
+:root[data-theme="dark"] .coding-card,
+:root[data-theme="dark"] .coding-note,
+:root[data-theme="dark"] .question-card,
+:root[data-theme="dark"] .answer-panel,
+:root[data-theme="dark"] .last-result,
+:root[data-theme="dark"] .timer-pill,
+:root[data-theme="dark"] .assessment-option,
+:root[data-theme="dark"] .interview-side,
+:root[data-theme="dark"] .interview-card,
+:root[data-theme="dark"] .add-company-form,
+:root[data-theme="dark"] .application-card,
+:root[data-theme="dark"] .planner-overview,
+:root[data-theme="dark"] .planner-tip,
+:root[data-theme="dark"] .resource-card,
+:root[data-theme="dark"] .resource-note { border-color: var(--line); }
+:root[data-theme="dark"] .topbar-date,
+:root[data-theme="dark"] .breadcrumbs strong,
+:root[data-theme="dark"] .page-footer a,
+:root[data-theme="dark"] .welcome-copy,
+:root[data-theme="dark"] .eyebrow,
+:root[data-theme="dark"] .stat-label,
+:root[data-theme="dark"] .stat-caption,
+:root[data-theme="dark"] .panel-description,
+:root[data-theme="dark"] .track-card p,
+:root[data-theme="dark"] .lesson-row p,
+:root[data-theme="dark"] .question-card p,
+:root[data-theme="dark"] .coding-card p,
+:root[data-theme="dark"] .interview-card p,
+:root[data-theme="dark"] .resource-card p,
+:root[data-theme="dark"] .resource-note p { color: var(--muted); }
+:root[data-theme="dark"] .welcome-row h1 em,
+:root[data-theme="dark"] .page-intro h1 em,
+:root[data-theme="dark"] .track-detail-hero h1 em,
+:root[data-theme="dark"] .assessment-ready-main h2 em { color: #b6cc8b; }
+:root[data-theme="dark"] .page-content h1,
+:root[data-theme="dark"] .page-content h2,
+:root[data-theme="dark"] .page-content h3,
+:root[data-theme="dark"] .page-content h4 { color: var(--ink); }
+:root[data-theme="dark"] .page-content p { color: var(--ink-soft); }
+:root[data-theme="dark"] .page-content a { color: #c2d99a; }
+:root[data-theme="dark"] .page-content input,
+:root[data-theme="dark"] .page-content textarea,
+:root[data-theme="dark"] .page-content select,
+:root[data-theme="dark"] .global-search input { border-color: var(--line-strong); background-color: var(--surface); color: var(--ink); }
+:root[data-theme="dark"] .page-content input::placeholder,
+:root[data-theme="dark"] .page-content textarea::placeholder,
+:root[data-theme="dark"] .global-search input::placeholder { color: var(--muted-light); }
+:root[data-theme="dark"] .global-search kbd { border-color: var(--line); color: var(--muted); }
+:root[data-theme="dark"] .progress-line { background: #34453a; }
+:root[data-theme="dark"] .assessment-dot { background: #46564a; }
+:root[data-theme="dark"] .assessment-dot.answered,
+:root[data-theme="dark"] .application-step.step-done { background: #8da56b; }
+:root[data-theme="dark"] .coding-card.coding-done { background: #24352b; }
+:root[data-theme="dark"] .empty-inline,
+:root[data-theme="dark"] .application-empty,
+:root[data-theme="dark"] .process-reference-grid > div { border-color: var(--line); background: #1b2921; }
+:root[data-theme="dark"] .global-search:focus-within { background: var(--surface); }
+
+@media (max-width: 760px) {
+  .topbar-actions { gap: 9px; }
+  .theme-toggle { width: 32px; height: 32px; }
+}

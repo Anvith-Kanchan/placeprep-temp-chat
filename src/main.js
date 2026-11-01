@@ -8,6 +8,7 @@ import {
 
 const root = document.querySelector('#root');
 const state = readState();
+document.documentElement.dataset.theme = state.theme;
 let currentView = 'overview';
 let selectedTrack = null;
 let selectedTopic = null;
@@ -68,6 +69,8 @@ const icons = {
   menu: '<path d="M3 6h18M3 12h18M3 18h18"/>',
   target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
   download: '<path d="M12 3v12m-5-5 5 5 5-5M4 20h16"/>',
+  moon: '<path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>',
 };
 
 function icon(name, size = 18) {
@@ -137,6 +140,7 @@ function shell(content) {
           <div class="breadcrumbs"><span>ROUNDZERO</span><b>/</b><strong>${escapeHTML(pageLabel())}</strong></div>
           <div class="topbar-actions">
             <label class="global-search">${icon('search', 16)}<input type="search" placeholder="Find a concept or question…" aria-label="Search the workspace" data-global-search><kbd>↵</kbd></label>
+            <button class="theme-toggle" data-action="toggle-theme" type="button" aria-label="Switch to ${state.theme === 'dark' ? 'light' : 'dark'} mode" title="Switch to ${state.theme === 'dark' ? 'light' : 'dark'} mode">${icon(state.theme === 'dark' ? 'sun' : 'moon', 17)}</button>
             <button class="topbar-date" title="Your local study workspace">${new Date().toLocaleDateString('en-IN', { weekday: 'short', day: '2-digit', month: 'short' })}</button>
           </div>
         </header>
@@ -443,6 +447,13 @@ root.addEventListener('click', (event) => {
   }
   if (target.dataset.action) {
     const action = target.dataset.action;
+    if (action === 'toggle-theme') {
+      state.theme = state.theme === 'dark' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = state.theme;
+      persist();
+      renderApp();
+      return;
+    }
     if (action === 'toggle-menu') { mobileMenuOpen = !mobileMenuOpen; renderApp(); }
     if (action === 'close-menu') { mobileMenuOpen = false; renderApp(); }
     if (action === 'back-tracks') { selectedTrack = null; selectedTopic = null; renderApp(); }

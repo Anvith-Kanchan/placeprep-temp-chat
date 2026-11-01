@@ -14,6 +14,7 @@ RoundZero brings structured CS learning, interview question practice, timed scre
 - **Hiring tracker:** track companies from resume shortlist through online assessment, technical rounds, design/manager discussion and HR/offer.
 - **Study plan & revision desk:** a daily checklist, saved lessons/questions, personal notes and assessment history.
 - **Resource shelf:** links to primary documentation, free textbooks, structured learning roadmaps and assessment practice platforms.
+- **Appearance:** switch between the original light palette and a forest-green dark theme; your choice is saved on this device.
 
 ## Run locally
 
@@ -49,7 +50,7 @@ npm run check
 
 ## Data and privacy
 
-This version is local-first. Learning progress, saved questions, personal notes, application tracker entries and assessment history are stored in the browser's `localStorage` under `roundzero:v1`. No account, external API, analytics service or server-side database is required. Data does not sync between browsers or devices. Clearing browser storage will clear this local workspace, so export/backup is not yet provided.
+This version is local-first. Learning progress, saved questions, personal notes, application tracker entries, assessment history and the appearance preference are stored in the browser's `localStorage` under `roundzero:v1`. No account, external API, analytics service or server-side database is required. Data does not sync between browsers or devices. Clearing browser storage will clear this local workspace, so export/backup is not yet provided.
 
 The assessment and interview modules are practice tools, not official company tests or a predictor of hiring outcomes. Hiring stages differ by employer and role; use the tracker as a flexible checklist rather than a claim about any one company's process.
 
